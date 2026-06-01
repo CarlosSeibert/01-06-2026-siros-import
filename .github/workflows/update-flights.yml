@@ -26,8 +26,9 @@ jobs:
         run: python scripts/fetch_flights.py
         env:
           AIRPORTS:             ${{ vars.AIRPORTS || 'SBCA,SBGR,SBSP,SBCT,SBGL,SBBR,SBFL,SBPA,SBSV,SBFZ' }}
-          SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SUPABASE_URL:         ${{ secrets.SUPABASE_URL || 'https://fypcwfwaiqdnzqwkumxr.supabase.co'}}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5cGN3ZndhaXFkbnpxd2t1bXhyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTA2OTQzMSwiZXhwIjoyMDk0NjQ1NDMxfQ.OlfS8boA1cN7LNRMaLZgitq_S_5x52PaSCtLmqzJ-3E
+'}}
 
       # Sem etapa de commit — os dados vao direto ao Supabase
       # O repositorio so guarda o codigo, nao os dados
